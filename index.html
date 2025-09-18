@@ -2,11 +2,90 @@
 <html lang="bn">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>টেস্ট পেজ</title>
+  <title>📜 সার্টিফিকেট সিস্টেম (ডেমো)</title>
+  <style>
+    body {
+      font-family: "Noto Sans Bengali", sans-serif;
+      background: #f4f6f9;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header {
+      background: #2ecc71;
+      color: white;
+      padding: 15px;
+      font-size: 22px;
+      font-weight: bold;
+    }
+    .upload-box {
+      margin: 30px auto;
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 450px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    input[type="file"] {
+      margin: 15px 0;
+    }
+    button {
+      background: #27ae60;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #219150;
+    }
+    .preview {
+      margin-top: 20px;
+    }
+    .preview iframe {
+      width: 100%;
+      height: 500px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+  </style>
 </head>
 <body>
-  <h1>হ্যালো! আমার ওয়েবসাইট কাজ করছে 🎉</h1>
-  <p>এখন কনটেন্ট আসছে।</p>
+  <header>📜 সার্টিফিকেট সিস্টেম (ডেমো)</header>
+
+  <div class="upload-box">
+    <h3>আপনার সার্টিফিকেট আপলোড করুন</h3>
+    <input type="file" id="fileInput" accept=".pdf,.jpg,.jpeg,.png">
+    <br>
+    <button onclick="uploadFile()">আপলোড</button>
+    <div class="preview" id="previewArea"></div>
+  </div>
+
+  <script>
+    function uploadFile() {
+      const fileInput = document.getElementById("fileInput");
+      const previewArea = document.getElementById("previewArea");
+
+      if (!fileInput.files.length) {
+        alert("দয়া করে একটি ফাইল নির্বাচন করুন!");
+        return;
+      }
+
+      const file = fileInput.files[0];
+      const fileURL = URL.createObjectURL(file);
+
+      // PDF হলে iframe-এ দেখাবে, ছবি হলে img ট্যাগে দেখাবে
+      if (file.type === "application/pdf") {
+        previewArea.innerHTML = `<iframe src="${fileURL}"></iframe>`;
+      } else if (file.type.startsWith("image/")) {
+        previewArea.innerHTML = `<img src="${fileURL}" style="max-width:100%;border-radius:8px;border:1px solid #ccc;">`;
+      } else {
+        previewArea.innerHTML = `<p>⚠️ এই ফাইলটি প্রিভিউ করা যাবে না (${file.name})</p>`;
+      }
+    }
+  </script>
 </body>
-</html>
+  </html>
