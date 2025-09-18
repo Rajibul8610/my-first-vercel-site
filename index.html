@@ -1,31 +1,90 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>হাইয়াতুল উলিয়া — সার্টিফিকেট যাচাইকরণ (Demo)</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>সার্টিফিকেট সিস্টেম</title>
   <style>
-    :root{--green:#198754;--dark:#0b2a2e;--muted:#6b7280}
-    *{box-sizing:border-box}body{font-family:Kalpurush, "Noto Sans Bengali", Arial, sans-serif;margin:0;background:#f3f6f8;color:#0b2a2e}
-    header{background:linear-gradient(90deg,#0b6b6f,#064b4d);color:#fff;padding:18px}
-    .container{max-width:1000px;margin:20px auto;padding:16px}
-    .grid{display:flex;gap:16px;flex-wrap:wrap}
-    .card{background:#fff;border-radius:8px;box-shadow:0 2px 8px rgba(15,23,42,0.06);padding:16px;flex:1}
-    h1,h2{margin:0 0 8px 0}
-    p{margin:0 0 12px 0;color:var(--muted)}
-    input[type="text"],select{width:100%;padding:10px;border:1px solid #d1d5db;border-radius:6px;margin-bottom:8px}
-    button{background:var(--green);color:#fff;border:0;padding:10px 12px;border-radius:6px;cursor:pointer}
-    .small{font-size:13px;color:var(--muted)}
-    .result{padding:12px;border-radius:6px;margin-top:8px}
-    .ok{background:#ecfdf5;color:#05603a;border:1px solid #bbf7d0}
-    .err{background:#fff1f2;color:#9f1239;border:1px solid #fecaca}
-    table{width:100%;border-collapse:collapse}
-    th,td{padding:8px;border-bottom:1px solid #eef2f7;text-align:left;font-size:14px}
-    .controls{display:flex;gap:8px;flex-wrap:wrap}
-    .muted{color:var(--muted);font-size:13px}
-    footer{padding:12px;text-align:center;color:var(--muted);font-size:13px;margin-top:24px}
-    @media(max-width:800px){.grid{flex-direction:column}}
-    .badge{display:inline-block;padding:4px 8px;border-radius:999px;font-size:12px;background:#f1f5f9;color:#0b2a2e;border:1px solid #e2e8f0}
-    .link{color:#0b6b6f;text-decoration:underline;cursor:pointer}
-    .admin-note{font-size:13px;color:#374151;background:#fffbe6;padding:8px;border-radius:6px}
-    .preview{border:1px solid #
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      text-align: center;
+      background: #f3f3f3;
+    }
+    h1 { color: darkgreen; }
+    .cert-box {
+      margin: 20px auto;
+      border: 1px solid #ccc;
+      padding: 20px;
+      width: 80%;
+      border-radius: 10px;
+      background: #fff;
+    }
+    .list {
+      margin-top: 20px;
+      text-align: left;
+    }
+    .cert-item {
+      background: #e9ffe9;
+      margin: 10px 0;
+      padding: 10px;
+      border: 1px solid #bbb;
+      border-radius: 6px;
+    }
+    button {
+      background: darkgreen;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: green;
+    }
+  </style>
+</head>
+<body>
+  <h1>📜 সার্টিফিকেট সিস্টেম (ডেমো)</h1>
+
+  <div class="cert-box">
+    <h2>আপনার সার্টিফিকেট আপলোড করুন</h2>
+    <input type="file" id="fileInput" accept=".jpg,.png,.pdf" />
+    <br><br>
+    <button onclick="uploadCert()">আপলোড</button>
+  </div>
+
+  <div class="list" id="list">
+    <h2>✅ আপলোড করা সার্টিফিকেট</h2>
+  </div>
+
+  <script>
+    function uploadCert() {
+      const fileInput = document.getElementById("fileInput");
+      const certList = document.getElementById("list");
+
+      if (!fileInput.files.length) {
+        alert("⚠️ কোনো ফাইল নির্বাচন করা হয়নি!");
+        return;
+      }
+
+      const file = fileInput.files[0];
+      const item = document.createElement("div");
+      item.className = "cert-item";
+
+      if (file.type.includes("image")) {
+        const img = document.createElement("img");
+        img.src = URL.createObjectURL(file);
+        img.style.maxWidth = "200px";
+        img.style.display = "block";
+        item.appendChild(img);
+      } else {
+        item.textContent = "📄 " + file.name;
+      }
+
+      certList.appendChild(item);
+      fileInput.value = "";
+    }
+  </script>
+</body>
+      </html>
