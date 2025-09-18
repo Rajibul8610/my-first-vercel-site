@@ -1,90 +1,12 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>সার্টিফিকেট সিস্টেম</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 40px;
-      text-align: center;
-      background: #f3f3f3;
-    }
-    h1 { color: darkgreen; }
-    .cert-box {
-      margin: 20px auto;
-      border: 1px solid #ccc;
-      padding: 20px;
-      width: 80%;
-      border-radius: 10px;
-      background: #fff;
-    }
-    .list {
-      margin-top: 20px;
-      text-align: left;
-    }
-    .cert-item {
-      background: #e9ffe9;
-      margin: 10px 0;
-      padding: 10px;
-      border: 1px solid #bbb;
-      border-radius: 6px;
-    }
-    button {
-      background: darkgreen;
-      color: #fff;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-    button:hover {
-      background: green;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>টেস্ট পেজ</title>
 </head>
 <body>
-  <h1>📜 সার্টিফিকেট সিস্টেম (ডেমো)</h1>
-
-  <div class="cert-box">
-    <h2>আপনার সার্টিফিকেট আপলোড করুন</h2>
-    <input type="file" id="fileInput" accept=".jpg,.png,.pdf" />
-    <br><br>
-    <button onclick="uploadCert()">আপলোড</button>
-  </div>
-
-  <div class="list" id="list">
-    <h2>✅ আপলোড করা সার্টিফিকেট</h2>
-  </div>
-
-  <script>
-    function uploadCert() {
-      const fileInput = document.getElementById("fileInput");
-      const certList = document.getElementById("list");
-
-      if (!fileInput.files.length) {
-        alert("⚠️ কোনো ফাইল নির্বাচন করা হয়নি!");
-        return;
-      }
-
-      const file = fileInput.files[0];
-      const item = document.createElement("div");
-      item.className = "cert-item";
-
-      if (file.type.includes("image")) {
-        const img = document.createElement("img");
-        img.src = URL.createObjectURL(file);
-        img.style.maxWidth = "200px";
-        img.style.display = "block";
-        item.appendChild(img);
-      } else {
-        item.textContent = "📄 " + file.name;
-      }
-
-      certList.appendChild(item);
-      fileInput.value = "";
-    }
-  </script>
+  <h1>হ্যালো! আমার ওয়েবসাইট কাজ করছে 🎉</h1>
+  <p>এখন কনটেন্ট আসছে।</p>
 </body>
-      </html>
+</html>
