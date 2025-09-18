@@ -1,49 +1,31 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>আমার ওয়েবসাইট</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>হাইয়াতুল উলিয়া — সার্টিফিকেট যাচাইকরণ (Demo)</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f9;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
-    header {
-      background: #0a9396;
-      color: white;
-      padding: 20px;
-    }
-    h1 {
-      margin: 0;
-    }
-    section {
-      padding: 20px;
-    }
-    footer {
-      background: #001219;
-      color: #fff;
-      padding: 10px;
-      margin-top: 20px;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>আল-হাইআতুল উলয়া</h1>
-    <p>একটি উদাহরণ ওয়েবসাইট</p>
-  </header>
-
-  <section>
-    <h2>স্বাগতম</h2>
-    <p>এই ওয়েবসাইটটি GitHub Pages ব্যবহার করে তৈরি করা হয়েছে।</p>
-  </section>
-
-  <footer>
-    <p>© 2025 আমার ওয়েবসাইট</p>
-  </footer>
-</body>
-  </html>
+    :root{--green:#198754;--dark:#0b2a2e;--muted:#6b7280}
+    *{box-sizing:border-box}body{font-family:Kalpurush, "Noto Sans Bengali", Arial, sans-serif;margin:0;background:#f3f6f8;color:#0b2a2e}
+    header{background:linear-gradient(90deg,#0b6b6f,#064b4d);color:#fff;padding:18px}
+    .container{max-width:1000px;margin:20px auto;padding:16px}
+    .grid{display:flex;gap:16px;flex-wrap:wrap}
+    .card{background:#fff;border-radius:8px;box-shadow:0 2px 8px rgba(15,23,42,0.06);padding:16px;flex:1}
+    h1,h2{margin:0 0 8px 0}
+    p{margin:0 0 12px 0;color:var(--muted)}
+    input[type="text"],select{width:100%;padding:10px;border:1px solid #d1d5db;border-radius:6px;margin-bottom:8px}
+    button{background:var(--green);color:#fff;border:0;padding:10px 12px;border-radius:6px;cursor:pointer}
+    .small{font-size:13px;color:var(--muted)}
+    .result{padding:12px;border-radius:6px;margin-top:8px}
+    .ok{background:#ecfdf5;color:#05603a;border:1px solid #bbf7d0}
+    .err{background:#fff1f2;color:#9f1239;border:1px solid #fecaca}
+    table{width:100%;border-collapse:collapse}
+    th,td{padding:8px;border-bottom:1px solid #eef2f7;text-align:left;font-size:14px}
+    .controls{display:flex;gap:8px;flex-wrap:wrap}
+    .muted{color:var(--muted);font-size:13px}
+    footer{padding:12px;text-align:center;color:var(--muted);font-size:13px;margin-top:24px}
+    @media(max-width:800px){.grid{flex-direction:column}}
+    .badge{display:inline-block;padding:4px 8px;border-radius:999px;font-size:12px;background:#f1f5f9;color:#0b2a2e;border:1px solid #e2e8f0}
+    .link{color:#0b6b6f;text-decoration:underline;cursor:pointer}
+    .admin-note{font-size:13px;color:#374151;background:#fffbe6;padding:8px;border-radius:6px}
+    .preview{border:1px solid #
