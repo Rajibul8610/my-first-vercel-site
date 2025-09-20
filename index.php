@@ -1,10 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="bn">
 <head>
-  <title>আমার প্রথম সাইট</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>আমার ওয়েবসাইট</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f9;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header {
+      background: #0a9396;
+      color: white;
+      padding: 20px;
+    }
+    h1 {
+      margin: 0;
+    }
+    section {
+      padding: 20px;
+    }
+    footer {
+      background: #001219;
+      color: #fff;
+      padding: 10px;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
-  <h1>আল-হাইআতুল উলিয়া সার্টিফিকেট ভেরিফিকেশন</h1>
-  <p>স্বাগতম! এখানে সার্টিফিকেট চেক করা যাবে।</p>
+  <header>
+    <h1>আল-হাইআতুল উলয়া</h1>
+    <p>একটি উদাহরণ ওয়েবসাইট</p>
+  </header>
+
+  <section>
+    <h2>স্বাগতম</h2>
+    <p>এই ওয়েবসাইটটি GitHub Pages ব্যবহার করে তৈরি করা হয়েছে।</p>
+  </section>
+
+  <footer>
+    <p>© 2025 আমার ওয়েবসাইট</p>
+  </footer>
 </body>
 </html>
